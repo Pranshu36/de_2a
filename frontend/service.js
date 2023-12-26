@@ -8,12 +8,14 @@ document.getElementById('new-item-form').addEventListener('submit', function (ev
 
     const newRow = document.createElement('tr');
     newRow.innerHTML = `
-        <td>${name}</td>
-        <td>${description}</td>
+        <td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis;">${name}</td>
+        <td style="max-width: 100px; overflow: hidden; text-overflow: ellipsis;">${description}</td>
         <td>${date}</td>
         <td>${quantity}</td>
         <td>${category}</td>
     `;
 
-    document.getElementById('table-body').appendChild(newRow);
+    const tableBody = document.getElementById('table-body');
+    tableBody.style.width = '100%';
+    tableBody.appendChild(newRow);
 });
